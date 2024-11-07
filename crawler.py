@@ -148,6 +148,7 @@ class WebCrawler:
             self.logger.error(f"Error validating URL {url}: {str(e)}")
             return False
 
+    # Remove /collections/abc from the URL
     def _clean_product_url(self, url: str) -> str:
         parsed = urlparse(url)
         path_parts = parsed.path.split("/")
