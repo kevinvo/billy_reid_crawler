@@ -19,7 +19,7 @@ MAX_WORKERS = 4  # Number of concurrent threads
 HTTP_SUCCESS = 200
 REQUEST_TIMEOUT = 10
 PROGRESS_INTERVAL = 100
-DEFAULT_DELAY = 2
+DEFAULT_DELAY = 1
 MAX_PAGES = 5_000
 
 MAX_RETRIES = 3
@@ -172,6 +172,7 @@ class WebCrawler:
                     if self._is_product_url(absolute_url):
                         cleaned_url = self._clean_product_url(absolute_url)
                         self.product_urls.add(cleaned_url)
+                        absolute_url = cleaned_url
                     links.add(absolute_url)
 
         return links
