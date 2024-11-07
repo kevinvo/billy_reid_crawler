@@ -21,7 +21,6 @@ wheels/
 
 # Logs and results
 logs/
-# results/
 *.log
 *.json
 
